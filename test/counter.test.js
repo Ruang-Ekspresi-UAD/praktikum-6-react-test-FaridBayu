@@ -28,13 +28,13 @@ describe('Counter Component', () => {
 
   });
   test('Display has correct value', () => {
-    const { rerender } = render(<Display value={0} />); // Render pertama dengan nilai 0
+    const { rerender } = render(<Display value={0} />); 
     const displayValue = screen.getByTestId('display-value');
-    expect(displayValue).toBeInTheDocument(); // Pastikan elemen ada
-    expect(displayValue).toHaveTextContent('Value: 0'); // Mengharapkan nilai Display adalah 0
+    expect(displayValue).toBeInTheDocument(); 
+    expect(displayValue).toHaveTextContent('Value: 0'); 
   
-    rerender(<Display value={5} />); // Render ulang dengan nilai 5
-    expect(displayValue).toHaveTextContent('Value: 5'); // Mengharapkan nilai Display menjadi 5
+    rerender(<Display value={5} />); 
+    expect(displayValue).toHaveTextContent('Value: 5'); 
   });
 });
   

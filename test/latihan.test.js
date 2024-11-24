@@ -4,14 +4,14 @@ import '@testing-library/jest-dom';
 import React from 'react';
 
 describe('Counter Component', () => {
-  // Test 1: Counter Default Value must be 0
+  // 1. Counter Default Value must be 0
   test('Counter default value must be 0', () => {
     render(<Counter />);
     const countValue = screen.getByTestId('counter-value');
     expect(countValue).toHaveTextContent('0');
   });
 
-  // Test 2: Increment works when button clicked
+  // 2. Increment works when button clicked
   test('increments count when increment button is clicked', () => {
     render(<Counter />);
     const countValue = screen.getByTestId('counter-value');
@@ -20,7 +20,7 @@ describe('Counter Component', () => {
     expect(countValue).toHaveTextContent('1');
   });
 
-  // Test 3: Decrement works when button clicked
+  // 3. Decrement works when button clicked
   test('decrements count when decrement button is clicked', () => {
     render(<Counter />);
     const countValue = screen.getByTestId('counter-value');
@@ -29,7 +29,7 @@ describe('Counter Component', () => {
     expect(countValue).toHaveTextContent('-1');
   });
 
-  // Test 4: Reset the count using reset button
+  // 4. Reset the count using reset button
   test('resets count when reset button is clicked', () => {
     render(<Counter />);
     const countValue = screen.getByTestId('counter-value');
@@ -43,24 +43,24 @@ describe('Counter Component', () => {
     expect(countValue).toHaveTextContent('0');
   });
 
-  // Test 5: Greeting component displays correct greeting for "nama kalian"
+  // 5. Greeting component displays correct greeting for "nama kalian"
   test('Greeting component shows correct name', () => {
     render(<Greeting name=" Muhammad Farid Bayu Hadi" />);
     const greetingElement = screen.getByTestId('greeting');
     expect(greetingElement).toHaveTextContent('Hello, Muhammad Farid Bayu Hadi');
   });
 
-  // Test 6: Greeting component displays correct greeting for "nama dosen kalian"
+  // 6. Greeting component displays correct greeting for "nama dosen kalian"
   test('Greeting component shows correct greeting for lecturer', () => {
     render(<Greeting name="Dr. Farid" />);
     const greetingElement = screen.getByTestId('greeting');
     expect(greetingElement).toHaveTextContent('Hello, Dr. Farid');
   });
 
-  // Test 7: Triggers alert with correct message when clicked
+  // 7. Triggers alert with correct message when clicked
   test('triggers alert with correct message when clicked', () => {
     const alertMessage = "This is an alert!";
-    global.alert = jest.fn(); // Mock the alert function
+    global.alert = jest.fn(); 
     
     render(<AlertButton message={alertMessage} />);
     
